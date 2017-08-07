@@ -1,0 +1,47 @@
+!path lib/*.jar
+!path fitsharp\*.dll
+!define PATH_SEPARATOR {;}
+!define TEST_RUNNER {FitSharp\Runner.exe}
+!define COMMAND_PATTERN {%m -r fitnesse.fitserver.FitServer,FitSharp\fit.dll %p} 
+
+
+!|dbfit.MySqlTest|
+!|Connect|localhost|root|abcd|fb2c_db|
+
+!c !-<b>Cadastro das áreas de entrega</b>-!
+
+|Comment|
+|Inserção de dados na tabela ODS_DELIVERY_AREA|
+
+!|Execute|insert into ODS_DELIVERY_AREA(NR_STORE_ID,NR_DELIVERY_AREA_ID,DS_ZIPCODE,NR_DELIVERY_FEE) values('001','1','05401300',14)|
+!|COMMIT|
+
+
+!|Execute|insert into ODS_DELIVERY_AREA(NR_STORE_ID,NR_DELIVERY_AREA_ID,DS_ZIPCODE,NR_DELIVERY_FEE) values('001','2','05401250','15.00')|
+!|COMMIT|
+
+
+
+!|Execute|insert into ODS_DELIVERY_AREA(NR_STORE_ID,NR_DELIVERY_AREA_ID,DS_ZIPCODE,NR_DELIVERY_FEE) values('001','3','05402100','20.45')|
+!|COMMIT|
+
+
+
+!|Execute|insert into ODS_DELIVERY_AREA(NR_STORE_ID,NR_DELIVERY_AREA_ID,DS_ZIPCODE,NR_DELIVERY_FEE) values('001','4','05401200','40.00')|
+!|COMMIT|
+
+
+
+!|Execute|insert into ODS_DELIVERY_AREA(NR_STORE_ID,NR_DELIVERY_AREA_ID,DS_ZIPCODE,NR_DELIVERY_FEE) values('001','5','05401150','15.44')|
+!|COMMIT|
+
+
+!|Execute|insert into ODS_DELIVERY_AREA(NR_STORE_ID,NR_DELIVERY_AREA_ID,DS_ZIPCODE,NR_DELIVERY_FEE) values('001','6','05402000',60)|
+!|COMMIT|
+
+
+
+|Comment|
+|Visualizar os dados da tabela ODS_DELIVERY_AREA|
+
+!| inspect Query |SELECT * from ODS_DELIVERY_AREA|

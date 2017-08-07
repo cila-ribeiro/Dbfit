@@ -1,0 +1,11 @@
+!contents -R2 -g -p -f -h
+
+!path lib/*.jar
+!path fitsharp\*.dll
+!define PATH_SEPARATOR {;}
+!define TEST_RUNNER {FitSharp\Runner.exe}
+!define COMMAND_PATTERN {%m -r fitnesse.fitserver.FitServer,FitSharp\fit.dll %p} 
+
+!|dbfit.MySqlTest                   |
+|Connect|localhost|root|abcd|fb2c_db|
+

@@ -1,0 +1,31 @@
+!path lib/*.jar
+!path fitsharp\*.dll
+!define PATH_SEPARATOR {;}
+!define TEST_RUNNER {FitSharp\Runner.exe}
+!define COMMAND_PATTERN {%m -r fitnesse.fitserver.FitServer,FitSharp\fit.dll %p} 
+
+
+!|dbfit.MySqlTest|
+!|Connect|localhost|root|abcd|fb2c_db|
+
+!c !-<b>Cadastro do tempo de execução do prato</b>-!
+
+|Comment|
+|Inserção de dados na tabela ODS_EXECUTION_TIME|
+
+!|Execute|insert into ODS_EXECUTION_TIME(NR_STORE_ID,NR_PRODUCT_ID,NR_EXECUTION_TIME_ID,NR_EXECUTION_TIME) values('001','1','14',450)|
+!|COMMIT|
+
+
+!|Execute|insert into ODS_EXECUTION_TIME(NR_STORE_ID,NR_PRODUCT_ID,NR_EXECUTION_TIME_ID,NR_EXECUTION_TIME) values('001','19','15',500)|
+!|COMMIT|
+
+
+!|Execute|insert into ODS_EXECUTION_TIME(NR_STORE_ID,NR_PRODUCT_ID,NR_EXECUTION_TIME_ID,NR_EXECUTION_TIME) values('001','20','16',800)|
+!|COMMIT|
+
+
+|Comment|
+|Visualizar os dados da tabela ODS_EXECUTION_TIME|
+
+!| inspect Query |SELECT * from ODS_EXECUTION_TIME|

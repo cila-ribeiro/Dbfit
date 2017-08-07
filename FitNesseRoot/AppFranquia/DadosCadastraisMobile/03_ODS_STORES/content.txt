@@ -1,0 +1,26 @@
+!path lib/*.jar
+!path fitsharp\*.dll
+!define PATH_SEPARATOR {;}
+!define TEST_RUNNER {FitSharp\Runner.exe}
+!define COMMAND_PATTERN {%m -r fitnesse.fitserver.FitServer,FitSharp\fit.dll %p} 
+
+
+!|dbfit.MySqlTest|
+!|Connect|localhost|root|abcd|fb2c_db|
+
+!c !-<b>Cadastro das Lojas</b>-! 
+
+
+|Comment|
+|Inserção de dados na tabela ODS_STORES|
+
+!|Execute|insert into ODS_STORES(NR_HEAD_OFFICE_ID,NR_STORE_ID,DS_STORE_NAME,DS_ADDRESS,DS_ZIPCODE,DS_PHONE,DS_CITY,DS_STATE,NR_LATITUDE,NR_LONGITUDE,NR_DELIVERY_TIME,NR_INVOICE_TYPE_ID,NR_TIMEZONE,NR_DELIVERY,NR_SIMULTANEOUS_QTY,DS_PHOTO_REF,DS_DESCRIPTION,DS_STORE_CODE,NR_CATALOG_ID) values('01603603000221','001','Giraffas Pinheiros','shopping Eldorado - Avenida Rebouças, 3970','05402-600','(11) 2197-7405','São Paulo', 'SP','-23.5726580','-46.6956430','300','1','-3','1','5','lOJA_REBOUCAS','lOJAS PROXIMO AO SHOPING ELDORADO','44514','1')|
+!|COMMIT|
+
+
+|Comment|
+|Visualizar os dados da tabela ODS_STORES|
+
+!| inspect Query |SELECT * from ODS_STORES|
+
+

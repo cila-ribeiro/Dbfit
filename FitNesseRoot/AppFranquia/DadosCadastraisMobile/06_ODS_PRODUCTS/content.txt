@@ -1,0 +1,151 @@
+!path lib/*.jar
+!path fitsharp\*.dll
+!define PATH_SEPARATOR {;}
+!define TEST_RUNNER {FitSharp\Runner.exe}
+!define COMMAND_PATTERN {%m -r fitnesse.fitserver.FitServer,FitSharp\fit.dll %p} 
+
+
+!|dbfit.MySqlTest|
+!|Connect|localhost|root|abcd|fb2c_db|
+
+
+!c !-<b>Cadastro das Produtos</b>-!
+
+|Comment|
+|Inserção de dados na tabela ODS_PRODUCTS|
+
+
+|Comment|
+|Inserção de dados para a categoria Sanduiches|
+
+!|Execute|insert into ODS_PRODUCTS(NR_CATEGORY_ID,NR_PRODUCT_ID,DS_PRODUCT_NAME,DS_DESCRIPTION,DS_PHOTO_REF) values('1','1','COMBO GIRAFFÃO CONTRA FILÉ','Bife de Contra Filé 100 g, 2 fatias de queijo, 2 fatias de bacon e maionese, com fritas e refrigerante a sua escolha','Combo_girafao_foto')|
+!|COMMIT|
+
+!|Execute|insert into ODS_PRODUCTS(NR_CATEGORY_ID,NR_PRODUCT_ID,DS_PRODUCT_NAME,DS_DESCRIPTION,DS_PHOTO_REF) values('1','2','COMBO GIRAFFÃO BURGUER','Hambúrguer de carne bovina 150 g, 2 fatias de queijo, 2 fatias de bacon e maionese, com fritas e refrigerante a escolha', 'COMBO_GIRAFFÃO_BURGUER_foto')|
+!|COMMIT|
+
+
+!|Execute|insert into ODS_PRODUCTS(NR_CATEGORY_ID,NR_PRODUCT_ID,DS_PRODUCT_NAME,DS_DESCRIPTION,DS_PHOTO_REF) values('1','3','COMBO DUPLO X-SALADA','2 Hambúrgueres de 56 g cada, 1 fatia de queijo, alface americana, tomate e maionese. Acompanha fritas e refrigerante', 'COMBO_DUPLO X-SALADA_foto')|
+!|COMMIT|
+
+
+
+!|Execute|insert into ODS_PRODUCTS(NR_CATEGORY_ID,NR_PRODUCT_ID,DS_PRODUCT_NAME,DS_DESCRIPTION,DS_PHOTO_REF) values('1','4','GIRAFFÃO CONTRA FILÉ','Bife de Contra Filé de 100 g, 2 fatias de queijo, 2 fatias de bacon e maionese.', 'GIRAFFÃO_CONTRA_FILÉ_foto')|
+!|COMMIT|
+
+
+!|Execute|insert into ODS_PRODUCTS(NR_CATEGORY_ID,NR_PRODUCT_ID,DS_PRODUCT_NAME,DS_DESCRIPTION,DS_PHOTO_REF) values('1','5','GIRAFFÃO BURGUER','Hambúrguer de carne bovina de 150 g 2 fatias de queijo, 2 fatias de bacon, e maionese.', 'GIRAFFÃO_BURGUER_foto')|
+!|COMMIT|
+
+
+|Comment|
+|Inserção de dados para a categoria Infantil|
+
+
+!|Execute|insert into ODS_PRODUCTS(NR_CATEGORY_ID,NR_PRODUCT_ID,DS_PRODUCT_NAME,DS_DESCRIPTION,DS_PHOTO_REF) values('2','6','COMBO GIRALANCHE FRANGUINHO','Frango compactado de 75g, alface americana, tomate e maionese, mais suco Kapo, batatas e Girasurpresa', 'COMBO GIRALANCHE_foto')|
+!|COMMIT|
+
+
+!|Execute|insert into ODS_PRODUCTS(NR_CATEGORY_ID,NR_PRODUCT_ID,DS_PRODUCT_NAME,DS_DESCRIPTION,DS_PHOTO_REF) values('2','7','COMBO GIRAPRATO TIRAS CARNE BOVINA','1 porção de 80 g de Tiras de Contra-Filé. Acompanha Arroz, feijão e salada + suco Kapo e Girasurpresa', 'COMBO GIRALANCHE_Bovino_foto')|
+!|COMMIT|
+
+
+|Comment|
+|Inserção de dados para a categoria Porções|
+
+
+!|Execute|insert into ODS_PRODUCTS(NR_CATEGORY_ID,NR_PRODUCT_ID,DS_PRODUCT_NAME,DS_DESCRIPTION,DS_PHOTO_REF) values('3','8','CROQUINHOS DE FRANGO 100G','CROQUINHOS 100G', 'CROQUINHOS _foto')|
+!|COMMIT|
+
+
+!|Execute|insert into ODS_PRODUCTS(NR_CATEGORY_ID,NR_PRODUCT_ID,DS_PRODUCT_NAME,DS_DESCRIPTION,DS_PHOTO_REF) values('3','9','CROQUINHOS DE FRANGO 190G','CROQUINHOS 100G', 'CROQUINHOS _foto_100G')|
+!|COMMIT|
+
+
+
+|Comment|
+|Inserção de dados para a categoria Milk Shakes|
+
+!|Execute|insert into ODS_PRODUCTS(NR_CATEGORY_ID,NR_PRODUCT_ID,DS_PRODUCT_NAME,DS_DESCRIPTION,DS_PHOTO_REF) values('4','10','BAUNILHA','BAUNILHA', 'BAUNILHA_foto')|
+!|COMMIT|
+
+!|Execute|insert into ODS_PRODUCTS(NR_CATEGORY_ID,NR_PRODUCT_ID,DS_PRODUCT_NAME,DS_DESCRIPTION,DS_PHOTO_REF) values('4','11','BEIJINHO','BEIJINHO', 'BEIJINHO_foto')|
+!|COMMIT|
+
+
+!|Execute|insert into ODS_PRODUCTS(NR_CATEGORY_ID,NR_PRODUCT_ID,DS_PRODUCT_NAME,DS_DESCRIPTION,DS_PHOTO_REF) values('4','12','BRIGADEIRO','BRIGADEIRO', 'BRIGADEIRO_foto')|
+!|COMMIT|
+
+
+|Comment|
+|Inserção de dados para a categoria Crepiza|
+
+
+!|Execute|insert into ODS_PRODUCTS(NR_CATEGORY_ID,NR_PRODUCT_ID,DS_PRODUCT_NAME,DS_DESCRIPTION,DS_PHOTO_REF) values('5','13','CREPIZZA CALABRESA','Uma massa fininha e crocante com recheio de calabresa acebolada, muçarela e orégano', 'crepiza_foto')|
+!|COMMIT|
+
+!|Execute|insert into ODS_PRODUCTS(NR_CATEGORY_ID,NR_PRODUCT_ID,DS_PRODUCT_NAME,DS_DESCRIPTION,DS_PHOTO_REF) values('5','14','CREPIZZA BOLOGNESA','Uma massa fininha e crocante com recheio de steak picado, molho de tomate, muçarela e orégano.', 'crepiza_bolognesa_foto')|
+!|COMMIT|
+
+
+|Comment|
+|Inserção de dados para a categoria Happy Hour|
+
+
+!|Execute|insert into ODS_PRODUCTS(NR_CATEGORY_ID,NR_PRODUCT_ID,DS_PRODUCT_NAME,DS_DESCRIPTION,DS_PHOTO_REF) values('6','15','FRANGO A PASSARINHO','Acompanha Batata Frita ou Mandioca', 'Acompanhamento_batata_foto')|
+!|COMMIT|
+
+!|Execute|insert into ODS_PRODUCTS(NR_CATEGORY_ID,NR_PRODUCT_ID,DS_PRODUCT_NAME,DS_DESCRIPTION,DS_PHOTO_REF) values('6','16','ISCAS DE FRANGO À MILANESA','Acompanha Batata Frita ou Mandioca', 'Acompanhamento_batata_Mandioca_foto')|
+!|COMMIT|
+
+
+|Comment|
+|Inserção de dados para a categoria Bebidas|
+
+!|Execute|insert into ODS_PRODUCTS(NR_CATEGORY_ID,NR_PRODUCT_ID,DS_PRODUCT_NAME,DS_DESCRIPTION,DS_PHOTO_REF) values('7','17','COCA COLA','COCA COLA LATA', 'coca_cola_foto')|
+!|COMMIT|
+
+!|Execute|insert into ODS_PRODUCTS(NR_CATEGORY_ID,NR_PRODUCT_ID,DS_PRODUCT_NAME,DS_DESCRIPTION,DS_PHOTO_REF) values('7','18','COCA COLA ZERO LATA','COCA COLA ZERO LATA', 'cola_cola_zero_foto')|
+!|COMMIT|
+
+|Comment|
+|Inserção de dados para a categoria Bebidas|
+
+!|Execute|insert into ODS_PRODUCTS(NR_CATEGORY_ID,NR_PRODUCT_ID,DS_PRODUCT_NAME,DS_DESCRIPTION,DS_PHOTO_REF) values('7','17','COCA COLA','COCA COLA LATA', 'coca_cola_foto')|
+!|COMMIT|
+
+!|Execute|insert into ODS_PRODUCTS(NR_CATEGORY_ID,NR_PRODUCT_ID,DS_PRODUCT_NAME,DS_DESCRIPTION,DS_PHOTO_REF) values('7','18','COCA COLA ZERO LATA','COCA COLA ZERO LATA', 'cola_cola_zero_foto')|
+!|COMMIT|
+
+|Comment|
+|Inserção de dados para a categoria Magnifico|
+
+
+!|Execute|insert into ODS_PRODUCTS(NR_CATEGORY_ID,NR_PRODUCT_ID,DS_PRODUCT_NAME,DS_DESCRIPTION,DS_PHOTO_REF) values('8','19','PICANHA NOBRE','2 Bifes de Picanha de 100 g cada + 3 acompanhamentos e 1 molho', 'picanha_foto')|
+!|COMMIT|
+
+
+
+!|Execute|insert into ODS_PRODUCTS(NR_CATEGORY_ID,NR_PRODUCT_ID,DS_PRODUCT_NAME,DS_DESCRIPTION,DS_PHOTO_REF) values('8','20','CONTRA FILÉ','2 Bifes de Contra Filé de 100 g cada + 3 acompanhamentos e 1 molho', 'picanha_Acompnahmento_foto')|
+!|COMMIT|
+
+
+
+!|Execute|insert into ODS_PRODUCTS(NR_CATEGORY_ID,NR_PRODUCT_ID,DS_PRODUCT_NAME,DS_DESCRIPTION,DS_PHOTO_REF) values('8','21','CHURRASCO BISTECAS SUÍNAS +LINGUIÇA','2 Bistecas Suínas de 120 g cada e 1 Linguiça Toscana de 60 g + 4 acompanhamentos e 1 molho', 'churrasco_foto')|
+!|COMMIT|
+
+
+!|Execute|insert into ODS_PRODUCTS(NR_CATEGORY_ID,NR_PRODUCT_ID,DS_PRODUCT_NAME,DS_DESCRIPTION,DS_PHOTO_REF,DS_PRODUCT_CODE) values('8','22','CHURRASCO BISTECAS SUÍNAS','2 Bistecas Suínas de 120 g cada e 1 Linguiça Toscana de 60 g ', 'churrasco_foto','1454')|
+!|COMMIT|
+
+
+
+|Comment|
+|Visualizar os dados da tabela ODS_PRODUCTS|
+
+!| inspect Query |SELECT * from ODS_PRODUCTS|
+
+
+
+
+

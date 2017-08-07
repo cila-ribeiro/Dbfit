@@ -1,0 +1,26 @@
+!path lib/*.jar
+!path fitsharp\*.dll
+!define PATH_SEPARATOR {;}
+!define TEST_RUNNER {FitSharp\Runner.exe}
+!define COMMAND_PATTERN {%m -r fitnesse.fitserver.FitServer,FitSharp\fit.dll %p} 
+
+!|dbfit.MySqlTest|
+!|Connect|localhost|root|abcd|fb2c_db|
+
+!c !-<b>Cadastro do Fraqueador</b>-!
+
+
+
+
+|Comment|
+|Inserção de dados na tabela ODS_HEAD_OFFICES|
+
+!|Execute|insert into ODS_HEAD_OFFICES values('01603603000221','Giraffas',1)|
+!|COMMIT|
+
+
+|Comment| 
+|Visualizar os dados do Franqueador|
+!| inspect Query           |SELECT * from ODS_HEAD_OFFICES|
+
+

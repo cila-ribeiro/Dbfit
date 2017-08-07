@@ -1,0 +1,27 @@
+!path lib/*.jar
+!path fitsharp\*.dll
+!define PATH_SEPARATOR {;}
+!define TEST_RUNNER {FitSharp\Runner.exe}
+!define COMMAND_PATTERN {%m -r fitnesse.fitserver.FitServer,FitSharp\fit.dll %p} 
+
+
+!|dbfit.MySqlTest|
+!|Connect|localhost|root|abcd|fb2c_db|
+
+!c !-<b>Cadastro do período de funcionamento da loja</b>-!
+
+|Comment|
+|Inserção de dados na tabela ODS_WORKING_PERIODS|
+
+!|Execute|insert into ODS_WORKING_PERIODS(NR_STORE_ID,NR_WORKING_PERIODS_ID,NR_DAY_OF_WEEK,DT_OPENING_HOUR,DT_CLOSING_HOUR,DS_PERIOD_TYPE) values('001','1','0','08:30:00','23:30:00', 'l')|
+!|COMMIT|
+
+
+!|Execute|insert into ODS_WORKING_PERIODS(NR_STORE_ID,NR_WORKING_PERIODS_ID,NR_DAY_OF_WEEK,DT_OPENING_HOUR,DT_CLOSING_HOUR,DS_PERIOD_TYPE) values('001','2','1','08:30:00','23:30:00', 'd')|
+!|COMMIT|
+
+
+|Comment|
+|Visualizar os dados da tabela ODS_WORKING_PERIODS|
+
+!| inspect Query |SELECT * from ODS_WORKING_PERIODS|

@@ -1,0 +1,30 @@
+!path lib/*.jar
+!path fitsharp\*.dll
+!define PATH_SEPARATOR {;}
+!define TEST_RUNNER {FitSharp\Runner.exe}
+!define COMMAND_PATTERN {%m -r fitnesse.fitserver.FitServer,FitSharp\fit.dll %p} 
+
+
+!|dbfit.MySqlTest|
+!|Connect|localhost|root|abcd|fb2c_db|
+
+!c !-<b>Cadastro dos nutrientes existentes no produto</b>-!
+
+|Comment|
+|Inserção de dados na tabela ODS_NUTRICIONAL_SPECS|
+
+!|Execute|insert into ODS_NUTRICIONAL_SPECS(NR_PRODUCT_ID,NR_NUTRICIONAL_SPECS_ID,DS_DESCRIPTION,DS_VALUE) values('20','CHURRASCO ','Valor calórico (kcal)/(Kj)C','321/1344 16')|
+!|COMMIT|
+
+
+!|Execute|insert into ODS_NUTRICIONAL_SPECS(NR_PRODUCT_ID,NR_NUTRICIONAL_SPECS_ID,DS_DESCRIPTION,DS_VALUE) values('20','CHURRASCO - 1 maminha de alcatra, 1 coxinha de asa e 1 linguiça mini - 132 g % VD (*)','Valor calórico (kcal)/(Kj)C','321/1344 16')|
+!|COMMIT|
+
+
+
+
+
+|Comment|
+|Visualizar os dados da tabela ODS_NUTRICIONAL_SPECS|
+
+!| inspect Query |SELECT * from ODS_NUTRICIONAL_SPECS|

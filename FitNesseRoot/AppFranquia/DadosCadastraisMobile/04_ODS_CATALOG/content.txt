@@ -1,0 +1,49 @@
+!path lib/*.jar
+!path fitsharp\*.dll
+!define PATH_SEPARATOR {;}
+!define TEST_RUNNER {FitSharp\Runner.exe}
+!define COMMAND_PATTERN {%m -r fitnesse.fitserver.FitServer,FitSharp\fit.dll %p} 
+
+
+!|dbfit.MySqlTest|
+!|Connect|localhost|root|abcd|fb2c_db|
+
+!c !-<b>Cadastro do Catálogo</b>-!
+
+|Comment|
+|Inserção de dados na tabela ODS_CATALOG|
+
+!|Execute|insert into ODS_CATALOG values('01603603000221','0001','BRASIL - MAR.17 (REFIL DELIVERY)','0001')|
+!|COMMIT|
+
+!|Execute|insert into ODS_CATALOG values('01603603000221','0002','BRASIL - MAR.17 (REFIL)','0002')|
+!|COMMIT|
+
+!|Execute|insert into ODS_CATALOG values('01603603000221','0003','NORTE - MAR.17 (COPO)','0003')|
+!|COMMIT|
+
+!|Execute|insert into ODS_CATALOG values('01603603000221','0004','NORTE - MAR.17 (LATA)','0004')|
+!|COMMIT|
+
+!|Execute|insert into ODS_CATALOG values('01603603000221','0005','NORTE - MAR.17 (QUIOSQUE)','0005')|
+!|COMMIT|
+
+!|Execute|insert into ODS_CATALOG values('01603603000221','0006','NORTE - MAR.17 (REFIL DELIVERY)','0006')|
+!|COMMIT|
+
+!|Execute|insert into ODS_CATALOG values('01603603000221','0007','NORTE - MAR.17 (REFIL)','0007')|
+!|COMMIT|
+
+!|Execute|insert into ODS_CATALOG values('01603603000221','0008','PORTOS - MAR.17 (COPO) - AERO GALEÃO','0008')|
+!|COMMIT|
+
+!|Execute|insert into ODS_CATALOG values('01603603000221','0009','PORTOS - MAR.17 (COPO) - AERO PR','0009')|
+!|COMMIT|
+
+!|Execute|insert into ODS_CATALOG values('01603603000221','0010',' PORTOS - MAR.17 (COPO) - Chopp Ajustado','0010')|
+!|COMMIT|
+
+
+!| inspect Query           |SELECT * from ODS_CATALOG|
+
+

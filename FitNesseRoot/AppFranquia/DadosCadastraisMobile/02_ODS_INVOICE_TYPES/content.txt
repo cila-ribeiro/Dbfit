@@ -1,0 +1,23 @@
+!path lib/*.jar
+!path fitsharp\*.dll
+!define PATH_SEPARATOR {;}
+!define TEST_RUNNER {FitSharp\Runner.exe}
+!define COMMAND_PATTERN {%m -r fitnesse.fitserver.FitServer,FitSharp\fit.dll %p} 
+
+!|dbfit.MySqlTest                   |
+|Connect|localhost|root|abcd|fb2c_db|
+
+
+!c !-<b>Tipo de Nota Fiscal</b>-!
+
+|Query|select NR_INVOICE_TYPE_ID,DS_INVOICE_NAME from ODS_INVOICE_TYPES|
+|NR_INVOICE_TYPE_ID               |DS_INVOICE_NAME               |
+|1                                |ECF                           |
+|2                                |SAT                           |
+|3                                |NFE                           |
+
+
+|Comment|
+|Visualizar os dados da tabela  ODS_STORES|
+
+!| inspect Query|SELECT * from ODS_INVOICE_TYPES|
